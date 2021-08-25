@@ -30,8 +30,8 @@ client.connect({
 });
  
 client.query('SELECT * FROM my_db.test_table')
-  .then(result => console.log(result))
-  .catch(err => console.error(err))
+  .then(result => console.log("result",result))
+  .catch(err => console.error("err",err))
   .done(() => client.close().catch(err => console.error(err)));
 
 var annotation = {

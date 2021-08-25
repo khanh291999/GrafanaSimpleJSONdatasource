@@ -28,6 +28,10 @@ client.connect({
   port: 25000,
   resultType: 'json-array'
 });
+
+client.connection.on("connected", () => {
+  console.log("Impala is connected!!!!!");
+});
  
 client.query('SELECT * FROM my_db.test_table')
   .then(result => console.log("result",result))

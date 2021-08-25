@@ -1,12 +1,14 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var _ = require('lodash');
+//const client = require('node-impala')
+import { createClient } from "node-impala";
+import express from "express";
+import bodyParser from 'body-parser';
+import _  from "lodash";
 var app = express();
 
 app.use(bodyParser.json());
 
-var timeserie = require('./series');
-var countryTimeseries = require('./country-series');
+import timeserie from './series.json';
+import countryTimeseries from './country-series.json';
 
 var now = Date.now();
 
@@ -18,6 +20,19 @@ for (var i = timeserie.length -1; i >= 0; i--) {
     decreaser += 50000;
   }
 }
+
+const client = createClient();
+
+client.connect({
+  host: '172.29.65.197',
+  port: 25000,
+  resultType: 'json-array'
+});
+ 
+client.query('SELECT column_name FROM table_name')
+  .then(result => console.log(result))
+  .catch(err => console.error(err))
+  .done(() => client.close().catch(err => console.error(err)));
 
 var annotation = {
   name : "annotation name",

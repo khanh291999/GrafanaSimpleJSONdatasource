@@ -29,7 +29,7 @@ client.connect({
   resultType: 'json-array'
 });
  
-client.query('SELECT column_name FROM table_name')
+client.query('SELECT * FROM my_db.test_table')
   .then(result => console.log(result))
   .catch(err => console.error(err))
   .done(() => client.close().catch(err => console.error(err)));

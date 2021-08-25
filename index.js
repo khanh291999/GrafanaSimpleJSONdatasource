@@ -170,6 +170,6 @@ app.all('/tag[\-]values', function(req, res) {
   res.end();
 });
 
-app.listen(3333);
+app.listen(8081);
 
-console.log("Server is listening to port 3333");
+console.log("Server is listening to port 8081");

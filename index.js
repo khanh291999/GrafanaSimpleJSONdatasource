@@ -35,17 +35,17 @@ client.connection.on("connected", () => {
 });
  
 client.query('SELECT * FROM a')
-  .then(result => console.log("result",result))
-  .catch(err => console.error("err",err))
+  .then(result => console.log("result query",result))
+  .catch(err => console.error("err query",err))
   .done(() => client.close().catch(err => console.error(err)));
 
 client.getResultsMetadata('SELECT * FROM a')
-  .then(metaData => console.log(metaData))
-  .catch(err => console.error(err));
+  .then(metaData => console.log("result metadata",metaData))
+  .catch(err => console.error("err metadata",err));
 
 client.explain('SELECT * FROM a')
-  .then(explanation => console.log(explanation))
-  .catch(err => console.error(err));
+  .then(explanation => console.log("result explain",explanation))
+  .catch(err => console.error("err explain",err));
 
 var annotation = {
   name : "annotation name",

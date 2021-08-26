@@ -27,8 +27,8 @@ client.connect({
   host: '172.29.65.197',
   port: 25000,
   resultType: 'json-array'
-}).then(message => console.log(message))
-.catch(error => console.error(error));;
+}).then(message => console.log("message",message))
+.catch(error => console.error("error",error));;
 
 client.connection.on("connected", () => {
   console.log("Impala is connected!!!!!");

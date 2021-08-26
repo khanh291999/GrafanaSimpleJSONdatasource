@@ -24,7 +24,7 @@ for (var i = timeserie.length -1; i >= 0; i--) {
 const client = createClient();
 
 client.connect({
-  host: '123.29.65.197',
+  host: '172.29.65.197',
   port: 25000,
   resultType: 'json-array'
 }).then(message => console.log("message",message))

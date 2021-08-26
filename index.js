@@ -25,7 +25,7 @@ const client = createClient();
 
 client.connect({
   host: '172.29.65.197',
-  port: 25000,
+  port: 21000,
   resultType: 'json-array'
 }).then(message => console.log("message",message))
 .catch(error => console.debug("error",error));;

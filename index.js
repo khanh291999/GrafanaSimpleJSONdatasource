@@ -34,16 +34,16 @@ client.connection.on("connected", () => {
   console.log("Impala is connected!!!!!");
 });
  
-client.query('SELECT * FROM a')
+client.query('SELECT * FROM a;')
   .then(result => console.log("result",result))
   .catch(err => console.error("err",err))
   .done(() => client.close().catch(err => console.error(err)));
 
-client.getResultsMetadata('SELECT * FROM a')
+client.getResultsMetadata('SELECT * FROM a;')
   .then(metaData => console.log(metaData))
   .catch(err => console.error(err));
 
-client.explain('SELECT * FROM a')
+client.explain('SELECT * FROM a;')
   .then(explanation => console.log(explanation))
   .catch(err => console.error(err));
 

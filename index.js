@@ -24,11 +24,11 @@ for (var i = timeserie.length -1; i >= 0; i--) {
 const client = createClient();
 
 client.connect({
-  host: '172.29.65.197',
+  host: '123.29.65.197',
   port: 25000,
   resultType: 'json-array'
 }).then(message => console.log("message",message))
-.catch(error => console.error("error",error));;
+.catch(error => console.debug("error",error));;
 
 client.connection.on("connected", () => {
   console.log("Impala is connected!!!!!");

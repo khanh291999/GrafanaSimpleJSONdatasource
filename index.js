@@ -39,6 +39,14 @@ client.query('SELECT * FROM a')
   .catch(err => console.error("err",err))
   .done(() => client.close().catch(err => console.error(err)));
 
+client.getResultsMetadata('SELECT * FROM a')
+  .then(metaData => console.log(metaData))
+  .catch(err => console.error(err));
+
+client.explain('SELECT * FROM a')
+  .then(explanation => console.log(explanation))
+  .catch(err => console.error(err));
+
 var annotation = {
   name : "annotation name",
   enabled: true,
